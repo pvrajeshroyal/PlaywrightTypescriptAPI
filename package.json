@@ -1,0 +1,16 @@
+{  
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.37.0",
+    "allure-commandline": "^2.23.1",
+    "allure-playwright": "^2.5.0"
+  },
+  "dependencies": {
+    "expect-playwright": "^0.8.0"
+  }
+}

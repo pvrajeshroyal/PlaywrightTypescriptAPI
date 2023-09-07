@@ -1,0 +1,32 @@
+name: test-functional-playwright-js
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+    paths:
+      - test-functional-playwright-js/**
+      - .github/workflows/test-functional-playwright-js.yml
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Update to Node.js version 16
+
+      - name: Install dependencies
+        run: |
+            npm install
+            npx playwright install
+
+      - name: Run your tests
+        run: npm run test    
